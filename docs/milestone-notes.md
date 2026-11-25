@@ -17,3 +17,20 @@ Design decision:
 
 Assistance:
 - No AI assistance was used.
+
+November 25, 2026 (Stage 2)
+
+Completed:
+- Implemented basic 2D map generation (5x5 to 12x12). This will be completed.
+- Added getter methods to Expedition.
+
+Known problems:
+- Stage 2 is not fully completed yet.
+
+Design decision:
+- Used a private helper method (placeRandomTile) inside Expedition to avoid code duplication when placing relics, hazards, exit, and supply cache on distinct non-starting cells.
+
+Assistance:
+- AI assistance was used to check the differences between System.currentTimeMillis() and System.nanoTime(). 
+- AI assistance (Gemini, Google LLC) was used to check if using System.currentTimeMillis() as an argument in Random() necessary.
+- PDF is included in /docs.
