@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Expedition {
-    Random rd = new Random();
+    Random rd = new Random(System.currentTimeMillis());
     private char[][] map = new char[0][0];
     private int row = -1;
     private int column = -1;
@@ -39,8 +39,7 @@ public class Expedition {
         // Placing random tiles will be implemented.
         return true;
     }
-}
-    
+
     public String getStatus(){
         return Status;
     }
@@ -71,3 +70,5 @@ public class Expedition {
         }
         return (100*collectedRelics) + (5*energy);
     }
+
+}
