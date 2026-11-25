@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Expedition {
-    Random rd = new Random(System.currentTimeMillis());
+    private Random rd = new Random(System.currentTimeMillis());
     private char[][] map = new char[0][0];
     private int row = -1;
     private int column = -1;
@@ -16,13 +16,13 @@ public class Expedition {
         
     }
 
-    public boolean startNewGame(int rows, int colums){
+    public boolean startNewGame(int rows, int cols){
         if (rows < 5 || rows > 12 || cols < 5 || cols > 12){
             return false;
         }
 
         map = new char[rows][cols];
-        for (int i = 0 ; i < row ; i++){
+        for (int i = 0 ; i < rows ; i++){
             for (int j = 0 ; j < cols ; j++){
                 map[i][j] = '.';
             }
@@ -36,12 +36,28 @@ public class Expedition {
         maxEnergy = 4 * rows * cols;
         energy = maxEnergy;
         status = "ACTIVE";
-        // Placing random tiles will be implemented.
+        
         return true;
     }
 
+    public void placeRandomTile(Random rd, char symbol, int count){
+        int rows = map.length;
+        int cols = map[0].length;
+        int placed = 0;
+
+        while (placed < count){
+            int placeRow = rd.nextInt(rows);
+            int placeCol = rd.nextInt(cols);
+            if ((placeRow != 0 || placeCol != 0) && map[placeRow][placeCol] == '.'){
+                map[placeRow][placeCol] = symbol;
+                placed++;
+            }
+        }
+    }
+
+
     public String getStatus(){
-        return Status;
+        return status;
     }
     public int getRow(){
         return row;
@@ -58,14 +74,14 @@ public class Expedition {
     public int getMaxEnergy(){
         return maxEnergy;
     }
-    public int getCollectedRelic(){
+    public int getCollectedRelics(){
         return collectedRelics;
     }
     public int getRequiredRelics(){
         return requiredRelics;
     }
     public int getScore(){
-        if (status.equals("NOT_STARTED"){
+        if (status.equals("NOT_STARTED")){
             return 0;
         }
         return (100*collectedRelics) + (5*energy);
