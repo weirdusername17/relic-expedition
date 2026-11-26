@@ -36,11 +36,16 @@ public class Expedition {
         maxEnergy = 4 * rows * cols;
         energy = maxEnergy;
         status = "ACTIVE";
+
+        placeRandomTile(rd,'X',1);
+        placeRandomTile(rd,'R',3);
+        placeRandomTile(rd,'H',3);
+        placeRandomTile(rd,'C',1);
         
         return true;
     }
 
-    public void placeRandomTile(Random rd, char symbol, int count){
+    private void placeRandomTile(Random rd, char symbol, int count){
         int rows = map.length;
         int cols = map[0].length;
         int placed = 0;
@@ -55,6 +60,16 @@ public class Expedition {
         }
     }
 
+    public char[][] getMap(){
+        if (map.length == 0) {
+            return new char[0][0];
+        }
+        char[][] cpy = new char[map.length][map[0].length];
+        for (int i = 0 ; i < cpy.length ; i++){
+            System.arraycopy(map[i], 0, cpy[i], 0, map[0].length);
+        }
+        return cpy;
+    }
 
     public String getStatus(){
         return status;
@@ -81,10 +96,7 @@ public class Expedition {
         return requiredRelics;
     }
     public int getScore(){
-        if (status.equals("NOT_STARTED")){
-            return 0;
-        }
+        if (status.equals("NOT_STARTED")) return 0;
         return (100*collectedRelics) + (5*energy);
     }
-
 }

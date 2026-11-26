@@ -1,4 +1,4 @@
-November 17, 2026
+November 17, 2026 (Stage 1)
 
 Completed:
 - Created the GitHub repository.
@@ -31,6 +31,24 @@ Design decision:
 - Used a private helper method (placeRandomTile) inside Expedition to avoid code duplication when placing relics, hazards, exit, and supply cache on distinct non-starting cells.
 
 Assistance:
-- AI assistance was used to check the differences between System.currentTimeMillis() and System.nanoTime(). 
+- AI assistance (Gemini, Google LLC) was used to check the differences between System.currentTimeMillis() and System.nanoTime(). 
 - AI assistance (Gemini, Google LLC) was used to check if using System.currentTimeMillis() as an argument in Random() necessary.
 - PDF is included in /docs.
+
+November 26, 2026 (Stage 2)
+
+Completed:
+- Placed random tiles.
+- Added getMap() method.
+- Fixed grammatical error in README.md and completed Build & Run instructions.
+
+Known problems:
+- Stage 2 is not fully completed yet.
+- ResultStore.java is still empty.
+- renderMap() and move() methods are not ready.
+
+Design decision:
+- Used arrayCopy to copy the map instead of returning the original one.
+
+Assistance:
+- No AI assistance was used. 

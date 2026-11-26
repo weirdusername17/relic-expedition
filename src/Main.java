@@ -15,7 +15,6 @@ public class Main{
             switch (choice) {
                 case "1":
                     Expedition expedition = new Expedition();
-                    //New expedition is ready.
                     //Continued in stage 2
                     break;
                 case "2":

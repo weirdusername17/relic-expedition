@@ -1,3 +1,3 @@
 public class ResultStore{
-    // Not dedicated to implement in stage 1   
+    // Will be implemented.
 }
