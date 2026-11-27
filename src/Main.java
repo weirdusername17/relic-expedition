@@ -15,7 +15,7 @@ public class Main{
             switch (choice) {
                 case "1":
                     Expedition expedition = new Expedition();
-                    //Continued in stage 2
+                    expedition.startNewGame(6, 6); //test
                     break;
                 case "2":
                     System.out.println("Exiting Relic Expedition. Goodbye!");
@@ -25,8 +25,10 @@ public class Main{
                     System.out.println("Invalid choice. Please enter 1 or 2.");
             }
         }
-
         sc.close();
+    }
+
+    public static void play(Scanner sc, Expedition expedition){
     }
 
     private static void printWelcome() {

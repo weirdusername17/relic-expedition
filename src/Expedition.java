@@ -41,7 +41,6 @@ public class Expedition {
         placeRandomTile(rd,'R',3);
         placeRandomTile(rd,'H',3);
         placeRandomTile(rd,'C',1);
-        
         return true;
     }
 
@@ -70,6 +69,29 @@ public class Expedition {
         }
         return cpy;
     }
+
+    public String renderMap(){
+        if (status.equals("NOT_STARTED") || map == null || map.length == 0 || map[0].length == 0) return "";
+
+        String out = "";
+        for (int i = 0 ; i < map.length ; i++){
+            for (int j = 0 ; j < map[0].length ; j++){
+                if (i == row && j == column){
+                    out += "@";
+                } else {
+                    out += map[i][j];
+                }
+                if (j < map[0].length - 1){
+                    out += " ";
+                }
+            }
+            if (i < map.length - 1){
+                out += "\n";
+            }
+        }
+        return out;
+    }
+
 
     public String getStatus(){
         return status;

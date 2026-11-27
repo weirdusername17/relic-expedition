@@ -51,4 +51,25 @@ Design decision:
 - Used arrayCopy to copy the map instead of returning the original one.
 
 Assistance:
-- No AI assistance was used. 
+- No AI assistance was used.
+
+November 27, 2026 (Stage 2)
+
+Completed:
+- Added renderMap() method.
+- Added empty play(Scanner sc, Expedition expedition) method.
+
+Known problems:
+- Stage 2 is not fully completed yet.
+- ResultStore.java is still empty.
+- move() and play(Scanner sc, Expedition expedition) methods are not ready.
+
+Design decision:
+- As stated, the player symbol is not a map tile.
+- As stated, the map is rendered without print statements.
+
+Assistance:
+- AI assistance (Gemini, Google LLC) was used to obtain some idea about rendering the map.
+- The code that AI wrote was not directly implemented, but the idea that the map can be returned as a String used. 
+- Only the idea was used. I wrote all the code myself.
+- PDF was updated in /docs.
